@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/80d1332606.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="header">
@@ -13,29 +14,270 @@
     </header>
     <nav class="nav">
         <ul class="nav__list">
-            <li class="nav__item nav__item--active"><a class="nav__link" href="#">Inicio</a></li>
-            <li class="nav__item"><a class="nav__link" href="#sobremin">Sobre mi</a></li>
-            <li class="nav__item"><a class="nav__link" href="#conocimientos">Conocimientos</a></li>
+            <li class="nav__item nav__item--active" id="firstListItem"><a class="nav__link" href="#">Inicio</a></li>
+            <li class="nav__item" id="secondListItem"><a class="nav__link" href="#sobremi">Sobre mi</a></li>
+            <li class="nav__item" id="thirdListItem"><a class="nav__link" href="#conocimientos">Conocimientos</a></li>
         </ul>
     </nav>
-    <section class="section" id="sobremin">
-        <h2 class="section__title">Section Header</h2>
+    <section class="section" id="sobremi">
+        <h2 class="section__title">Sobre mi</h2>
         <div class="card">
+            <div class="card__header"></div>
             <div class="card__body">
-                
+                <img src="images/working-code.jpg" alt="" class="card__image">
+                <div class="card__text">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, repellendus sapiente placeat minima recusandae perferendis nemo excepturi! Deleniti, voluptates qui. Praesentium fuga provident nemo doloremque reiciendis explicabo quae consectetur quas?</p>
+                </div>
             </div>
         </div>
     </section>
     <section class="section" id="conocimientos">
-        <h2 class="section__title">Section Header</h2>
-        <div class="card">
-            <div class="card__body">
-                
+        <h2 class="section__title">Conocimientos</h2>
+        <div id="card__box" class="card card__box">
+            <div class="card__body card__body--wrap card__body--animate">
+                <div class="animate__container">
+                    <div class="box box--margin-right">
+                        <div class="box__body">
+                            <img src="images/online-web-dev.jpg" alt="" class="box__image">
+                            <h3>Desarrollo Web</h3>
+                            <button class="box__button button__DW button__modal" data-ref="modalDW">Detalle</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate__container">
+                    <div class="box box--margin-left">
+                        <div class="box__body">
+                            <img src="images/database.jpg" alt="" class="box__image">
+                            <h3>Bases de Datos</h3>
+                            <button class="box__button button__DB button__modal" data-ref="modalDB">Detalle</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="arrow arrow-first arrow--inactive"><i class="fas fa-arrow-alt-circle-left"></i></div>
+                <div class="arrow arrow-last"><i class="fas fa-arrow-alt-circle-right"></i></div>
             </div>
         </div>
     </section>
-    <footer>
-        Arles Yha 2
+    <div class="modal" id="modalDW" data-hidden="modal">
+        <div class="modal__container">
+            <div class="modal__header">
+                <h2 class="modal__title">DESARROLLO WEB</h2>
+            </div>
+            <div class="modal__body">
+                <div class="book">
+                    <div class="book__header">
+                        <h4 class="book__title">HTML5</h4>
+                    </div>
+                    <div class="book__body">
+                        <div class="skill__container">
+                            <div class="html skill__bar"></div>
+                            <div class="skill__level">
+                                <small>
+                                    <i>Nivel - 85%</i>
+                                </small>
+                            </div>
+                            <div class="skill__description">
+                                <small>
+                                    <i>Maquetación, diseño y desarrollo.</i>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="book">
+                    <div class="book__header">
+                        <h4 class="book__title">CSS3</h4>
+                    </div>
+                    <div class="book__body">
+                        <div class="skill__container">
+                            <div class="css skill__bar"></div>
+                            <div class="skill__level">
+                                <small>
+                                    <i>Nivel - 80%</i>
+                                </small>
+                            </div>
+                            <div class="skill__description">
+                                <small>
+                                    <i>Diseño responsivo, animaciones.</i>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="book">
+                    <div class="book__header">
+                        <h4 class="book__title">SASS</h4>
+                    </div>
+                    <div class="book__body">
+                        <div class="skill__container">
+                            <div class="scss skill__bar"></div>
+                            <div class="skill__level">
+                                <small>
+                                    <i>Nivel - 30%</i>
+                                </small>
+                            </div>
+                            <div class="skill__description">
+                                <small>
+                                    <i>Preprocesador de CSS.</i>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="book">
+                    <div class="book__header">
+                        <h4 class="book__title">JavaScript</h4>
+                    </div>
+                    <div class="book__body">
+                        <div class="skill__container">
+                            <div class="js skill__bar"></div>
+                            <div class="skill__level">
+                                <small>
+                                    <i>Nivel - 60%</i>
+                                </small>
+                            </div>
+                            <div class="skill__description">
+                                <small>
+                                    <i>Interacción con el usuario, ES6, Ajax, Fecth.</i>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="book">
+                    <div class="book__header">
+                        <h4 class="book__title">PHP</h4>
+                    </div>
+                    <div class="book__body">
+                        <div class="skill__container">
+                            <div class="php skill__bar"></div>
+                            <div class="skill__level">
+                                <small>
+                                    <i>Nivel - 45%</i>
+                                </small>
+                            </div>
+                            <div class="skill__description">
+                                <small>
+                                    <i>Modelo MVC.</i>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="book">
+                    <div class="book__header">
+                        <h4 class="book__title">React</h4>
+                    </div>
+                    <div class="book__body">
+                        <div class="skill__container">
+                            <div class="react skill__bar"></div>
+                            <div class="skill__level">
+                                <small>
+                                    <i>Nivel - 25%</i>
+                                </small>
+                            </div>
+                            <div class="skill__description">
+                                <small>
+                                    <i>Componentes de clases y funcionales, rutas, renderizado de elemento, renderizado condicional, etc.</i>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__footer">
+                <button class="button__modal--close" data-hidden="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="modalDB" data-hidden="modal">
+        <div class="modal__container modal__sm">
+            <div class="modal__header">
+                <h2 class="modal__title">BASES DE DATOS</h2>
+            </div>
+            <div class="modal__body">
+                <div class="book book--sm">
+                    <div class="book__header">
+                        <h4 class="book__title">MySQL - SQL-Server - PostreSQL</h4>
+                    </div>
+                    <div class="book__body">
+                        <div class="skill__container">
+                            <div class="sql skill__bar"></div>
+                            <div class="skill__level">
+                                <small>
+                                    <i>Nivel - 70%</i>
+                                </small>
+                            </div>
+                            <div class="skill__description">
+                                <small>
+                                    <i>Procedimientos almacenados, vistas, desencadenadores(Trigger), funciones.</i>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="book book--sm">
+                    <div class="book__header">
+                        <h4 class="book__title">Modelado de Datos</h4>
+                    </div>
+                    <div class="book__body">
+                        <div class="skill__container">
+                            <div class="md skill__bar"></div>
+                            <div class="skill__level">
+                                <small>
+                                    <i>Nivel - 60%</i>
+                                </small>
+                            </div>
+                            <div class="skill__description">
+                                <small>
+                                    <i>Modelamiendo de datos para BD relacionales.</i>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__footer">
+                <button class="button__modal--close" data-hidden="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+    <button class="fas fa-bars button--round button__menu" id="openMenu"></button>
+    <footer class="footer">
+        <div class="footer__bar">
+            <div class="footer__item footer__logo">
+                <h2>Arles Yha</h2>
+            </div>
+            <div class="footer__item footer__knowledge">
+                <h4>Conocimientos</h4>
+                <ul class="footer__list footer__list__bar">
+                    <li class="footer__list__item">
+                        <a class="footer__link footer__link__conocimientos" href="#modalDW">Desarrollo Web</a>
+                    </li>
+                    <li class="footer__list__item">
+                        <a class="footer__link footer__link__conocimientos" href="#modalDB">Bases de Datos</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__item footer__gratitude">
+                <h4>Agradecimientos y créditos</h4>
+                <ul class="footer__list footer__list__gratitude">
+                    <li><h5>Imágenes gracias a:</h5></li>
+                    <li class="footer__list__item">
+                        <a class="footer__link" href="https://www.freepik.com/photos/technology" target="_blank">Foto de tecnología - www.freepik.com</a>
+                    </li>
+                    <li class="footer__list__item">
+                        <a class="footer__link" href="https://www.freepik.com/vectors/cartoon" target="_blank">Vector de dibujos - www.freepik.com</a>
+                    </li>
+                    <li class="footer__list__item">
+                        <a class="footer__link" href="https://www.freepik.com/vectors/abstract" target="_blank">Vector abstracto - www.freepik.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__rights">
+            © 2021 Arles Yha Zelada, todos los derechos reservados.
+        </div>
     </footer>
     <script src="scripts.js"></script>
 </body>
