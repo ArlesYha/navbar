@@ -451,6 +451,7 @@ body {
     height: 85%;
     display: flex;
     flex: 2;
+    border-bottom: 1px solid
 }
 
 .footer__item {
@@ -461,6 +462,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.footer__knowledge {
+    border-left: 1px solid;
+    border-right: 1px solid;
 }
 
 .footer__list__item {
@@ -687,6 +693,11 @@ body {
 
     .footer__bar {
         flex-direction: column;
+        border: none;
+    }
+
+    .footer__knowledge {
+        border: none;
     }
 
     .footer__item {
@@ -835,6 +846,10 @@ body {
         min-height: calc(100% - 140px);
         max-height: calc(100% - 140px);
         overflow-y: auto;
+    }
+
+    .modal__body::-webkit-scrollbar {
+        display: none;
     }
     
     .modal__footer {
