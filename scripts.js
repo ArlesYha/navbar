@@ -21,10 +21,33 @@ const sections = document.querySelectorAll(".section")
 let sTop = []
 for (const section of sections) {
     if(window.innerWidth <= 500 ) 
-        sTop.push(section.offsetTop - (Math.round(parseFloat(mTop) + 100)))
+        sTop.push(section.offsetTop - (Math.round(parseFloat(mTop) + 100))) 
     else 
         sTop.push(section.offsetTop - (nav.clientHeight + Math.round(parseFloat(mTop) + 100)))
     
+}
+
+// console.log(document.styleSheets.length)
+
+window.onresize = _ => {
+    sTop = []
+    for (const section of sections) {
+        if(window.innerWidth <= 500 ) 
+            sTop.push(section.offsetTop - (Math.round(parseFloat(mTop) + 100)))
+        else {
+            sTop.push(section.offsetTop - (nav.clientHeight + Math.round(parseFloat(mTop) + 100)))
+        }
+    }
+
+    if(window.innerHeight <= 500 && window.innerWidth > 500) {
+        for (const item of document.querySelectorAll(".nav__item")) {
+            item.classList.remove("nav__item--pseudo")
+        }
+    } else {
+        for (const item of document.querySelectorAll(".nav__item")) {
+            item.classList.add("nav__item--pseudo")
+        }
+    }
 }
 
 const links = document.querySelectorAll(".nav__link")
@@ -185,3 +208,57 @@ for (const linkCon of linksCon) {
         body.classList.add("scroller--none")
     }
 }
+
+const linkLogoFooter = document.querySelector(".footer__logo__link")
+linkLogoFooter.onclick = e => {
+    e.preventDefault();
+    window.scroll({
+        top: 0,
+        behavior: "smooth"
+    })
+}
+
+// console.log(document.styleSheets[0])
+
+// for (var i = 0; i < document.styleSheets.length; i++) { 
+//     var rulesToLoose = []; 
+//     // _.each(sheet.cssRules, function (rule, index) { 
+//     //     if (rule.selectorText && rule.selectorText.indexOf(':hover') > 0) { 
+//     //         rulesToLoose.push(index);
+//     //     }
+//     // });
+//     console.log(rulesToLoose)
+// };
+
+// const userAgent = navigator.userAgent || navigator.vendor || window.opera
+// if (/android/i.test(userAgent)) {
+//     console.log("object")
+// }
+
+// if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+//     document.getElementsByClassName('android')[0].style.visibility = 'hidden';
+//    document.getElementsByClassName('android')[0].style.display = 'none';
+// }
+
+// var isMobile = {
+//     Android: function() {
+//         return navigator.userAgent.match(/Android/i);
+//     },
+//     BlackBerry: function() {
+//         return navigator.userAgent.match(/BlackBerry/i);
+//     },
+//     iOS: function() {
+//         return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+//     },
+//     Opera: function() {
+//         return navigator.userAgent.match(/Opera Mini/i);
+//     },
+//     Windows: function() {
+//         return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+//     },
+//     any: function() {
+//         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+//     }
+// };
+
+// if( isMobile.any() ) alert('Mobile');
